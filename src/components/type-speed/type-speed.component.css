@@ -1,0 +1,10 @@
+div span {
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #b0bec5;
+}
+
+div span:nth-child(2) {
+  font-size: 16px;
+  color: #78909c;
+}

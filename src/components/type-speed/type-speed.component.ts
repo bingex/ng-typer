@@ -5,18 +5,19 @@ import { Store, select } from '@ngrx/store';
 import { State } from './../../interfaces/State';
 
 @Component({
-  selector: 'typer-text',
-  templateUrl: './typer-text.component.html',
-  styleUrls: ['./typer-text.component.css']
+  templateUrl: './type-speed.component.html',
+  styleUrls: ['./type-speed.component.css'],
+  selector: 'type-speed'
 })
-export class TyperText {
-  activeWordIndex: number;
-  textToType: string[];
+export class TypeSpeed {
+  speed: number = 0;
 
   constructor(private store: Store<State>) {
     store.select('textReducer').subscribe((state: State) => {
-      this.activeWordIndex = state.activeWordIndex;
-      this.textToType = state.textToType;
+      if (state.timePassed)
+        this.speed = Math.round(
+          ((state.activeWordIndex + 1) * 60) / state.timePassed
+        );
     });
   }
 }

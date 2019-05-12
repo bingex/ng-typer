@@ -1,4 +1,17 @@
 .active {
-  color: green;
+  color: #4caf50;
   text-decoration: underline;
+}
+
+.typer-text {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0 0 0;
+}
+
+.typer-text > span {
+  font-family: sans-serif;
+  font-size: 16px;
+  padding: 3px 0;
+  color: #757575;
 }

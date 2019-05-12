@@ -1,0 +1,22 @@
+input {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 3px;
+  border: 1px solid #eeeeee;
+  margin-top: 35px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input::-webkit-input-placeholder {
+  color: #e0e0e0;
+}
+input::-moz-placeholder {
+  color: #e0e0e0;
+}
+input:-ms-input-placeholder {
+  color: #e0e0e0;
+}
+input:-moz-placeholder {
+  color: #e0e0e0;
+}

@@ -6,4 +6,5 @@ export interface State {
   activeWordIndex: number;
   typerInProgress: boolean;
   timePassed: number;
+  textToType: string[];
 }

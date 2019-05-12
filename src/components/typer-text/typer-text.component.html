@@ -1,9 +1,8 @@
-<!-- <div>
-  <span *ngFor="let word of text; let i = index">
+<div class="typer-text">
+  <span *ngFor="let word of textToType; let i = index">
     <span [class.active]="i === activeWordIndex">{{ word }}</span>
+    <span>&nbsp;</span>
     <span *ngIf="word.endsWith('.', 1)">&nbsp;</span>
   </span>
-</div> -->
-<div>
-  typer text
 </div>
+

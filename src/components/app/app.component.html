@@ -1,4 +1,11 @@
-<div>
+<div class="wrapper">
   <welcome *ngIf="!typerInProgress"></welcome>
-  <typer-text *ngIf="typerInProgress"></typer-text>
+  <div *ngIf="typerInProgress">
+    <div class="topbar">
+      <timer></timer>
+      <type-speed></type-speed>
+    </div>
+    <typer-text></typer-text>
+    <typer-input></typer-input>
+  </div>
 </div>

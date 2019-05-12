@@ -14,7 +14,8 @@ import { Actions, ActionTypes } from './text.actions';
 export const intitialState: State = {
   activeWordIndex: 0,
   typerInProgress: false,
-  timePassed: 0
+  timePassed: 0,
+  textToType: []
 };
 
 /**
@@ -40,6 +41,9 @@ export function textReducer(state = intitialState, action: Actions): State {
 
     case ActionTypes.SetTimePassed:
       return { ...state, timePassed: action.payload };
+
+    case ActionTypes.SetTextToType:
+      return { ...state, textToType: action.payload };
 
     default:
       return state;
