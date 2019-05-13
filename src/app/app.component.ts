@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { NgTyperService } from './ng-typer.service';
 
 // State management
 import { Store, select } from '@ngrx/store';
 import { State } from './interfaces/State';
 import { SetTextToType } from './store/text.actions';
-
-// Mock text
-// TODO: change to api based
-import { mockText } from './mockText';
 
 @Component({
   selector: 'app-root',
@@ -17,13 +14,22 @@ import { mockText } from './mockText';
 export class AppComponent implements OnInit {
   phase: string;
 
-  constructor(private store: Store<State>) {
+  constructor(
+    private store: Store<State>,
+    private ngTyperService: NgTyperService
+  ) {
     store.select('textReducer').subscribe((state: State) => {
       this.phase = state.phase;
     });
   }
 
   ngOnInit() {
-    this.store.dispatch(new SetTextToType(mockText.split(' ')));
+    this.ngTyperService.getTextToType().subscribe(response => {
+      this.setTextToType(response);
+    });
+  }
+
+  setTextToType(text) {
+    this.store.dispatch(new SetTextToType(text.split(' ')));
   }
 }
