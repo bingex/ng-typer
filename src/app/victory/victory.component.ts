@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 // State management
 import { Store, select } from '@ngrx/store';
-import { State } from './../../interfaces/State';
-import { StartType } from './../../store/text.actions';
+import { State } from './../interfaces/State';
 
 @Component({
   templateUrl: './victory.component.html',

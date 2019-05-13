@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 // State management
 import { Store, select } from '@ngrx/store';
-import { State } from './../../interfaces/State';
+import { State } from './../interfaces/State';
 
 @Component({
   selector: 'typer-text',

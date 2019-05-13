@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 
 // State management
 import { Store, select } from '@ngrx/store';
-import { State } from './../../interfaces/State';
-import { SetTextToType } from './../../store/text.actions';
+import { State } from './interfaces/State';
+import { SetTextToType } from './store/text.actions';
 
 // Mock text
 // TODO: change to api based
-import { mockText } from './../../mockText';
+import { mockText } from './mockText';
 
 @Component({
   selector: 'app-root',
