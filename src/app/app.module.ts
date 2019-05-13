@@ -12,6 +12,7 @@ import { TyperInput } from './typer-input/typer-input.component';
 import { Timer } from './timer/timer.component';
 import { TypeSpeed } from './type-speed/type-speed.component';
 import { Victory } from './victory/victory.component';
+import { FocusOnShowDirective } from './directives/FocusOnShowDirective';
 
 // Reducers
 import { textReducer } from './store/text.reducer';
@@ -24,7 +25,8 @@ import { textReducer } from './store/text.reducer';
     TyperInput,
     Timer,
     TypeSpeed,
-    Victory
+    Victory,
+    FocusOnShowDirective
   ],
   imports: [
     BrowserModule,
