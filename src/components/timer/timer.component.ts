@@ -19,7 +19,7 @@ export class Timer {
 
   constructor(private store: Store<State>) {
     store.select('textReducer').subscribe((state: State) => {
-      if (state.typerInProgress) {
+      if (state.phase === 'started') {
         if (!this._timer) this.startTimer();
       } else {
         this.stopTimer();

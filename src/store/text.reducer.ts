@@ -13,7 +13,7 @@ import { Actions, ActionTypes } from './text.actions';
  */
 export const intitialState: State = {
   activeWordIndex: 0,
-  typerInProgress: false,
+  phase: 'stopped',
   timePassed: 0,
   textToType: []
 };
@@ -31,10 +31,10 @@ export function textReducer(state = intitialState, action: Actions): State {
         activeWordIndex: action.payload
       };
 
-    case ActionTypes.StartType:
+    case ActionTypes.SetPhase:
       return {
         ...state,
-        typerInProgress: action.payload,
+        phase: action.payload,
         activeWordIndex: action.payload ? state.activeWordIndex : 0,
         timePassed: action.payload ? state.timePassed : 0
       };

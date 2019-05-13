@@ -2,7 +2,7 @@ import { Action } from '@ngrx/store';
 
 export enum ActionTypes {
   SetActiveWordIndex = 'Set active word index',
-  StartType = 'Start type',
+  SetPhase = 'Set phase',
   SetTimePassed = 'Set time passed',
   SetTextToType = 'Set text to type'
 }
@@ -12,9 +12,9 @@ export class SetActiveWordIndex implements Action {
   constructor(public payload: number) {}
 }
 
-export class StartType implements Action {
-  readonly type = ActionTypes.StartType;
-  constructor(public payload: boolean) {}
+export class SetPhase implements Action {
+  readonly type = ActionTypes.SetPhase;
+  constructor(public payload: string) {}
 }
 
 export class SetTimePassed implements Action {
@@ -29,6 +29,6 @@ export class SetTextToType implements Action {
 
 export type Actions =
   | SetActiveWordIndex
-  | StartType
+  | SetPhase
   | SetTimePassed
   | SetTextToType;

@@ -1,6 +1,7 @@
-<div class="wrapper">
-  <welcome *ngIf="!typerInProgress"></welcome>
-  <div *ngIf="typerInProgress">
+<div class="wrapper" [ngSwitch]="phase">
+  <welcome *ngSwitchCase="'stopped'"></welcome>
+
+  <div *ngSwitchCase="'started'">
     <div class="topbar">
       <timer></timer>
       <type-speed></type-speed>
@@ -8,4 +9,6 @@
     <typer-text></typer-text>
     <typer-input></typer-input>
   </div>
+
+  <victory *ngSwitchCase="'finished'"></victory>
 </div>

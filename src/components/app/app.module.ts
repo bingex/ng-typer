@@ -11,6 +11,7 @@ import { TyperText } from './../typer-text/typer-text.component';
 import { TyperInput } from './../typer-input/typer-input.component';
 import { Timer } from './../timer/timer.component';
 import { TypeSpeed } from './../type-speed/type-speed.component';
+import { Victory } from './../victory/victory.component';
 
 // Reducers
 import { textReducer } from './../../store/text.reducer';
@@ -22,7 +23,8 @@ import { textReducer } from './../../store/text.reducer';
     TyperText,
     TyperInput,
     Timer,
-    TypeSpeed
+    TypeSpeed,
+    Victory
   ],
   imports: [
     BrowserModule,

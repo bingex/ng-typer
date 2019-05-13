@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 // State management
 import { Store, select } from '@ngrx/store';
 import { State } from './../../interfaces/State';
-import { StartType } from './../../store/text.actions';
+import { SetPhase } from './../../store/text.actions';
 
 @Component({
   templateUrl: './welcome.component.html',
@@ -14,6 +14,6 @@ export class Welcome {
   constructor(private store: Store<State>) {}
 
   startTyper() {
-    this.store.dispatch(new StartType(true));
+    this.store.dispatch(new SetPhase('started'));
   }
 }

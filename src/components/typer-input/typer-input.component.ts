@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 // State management
 import { Store, select } from '@ngrx/store';
 import { State } from './../../interfaces/State';
-import { SetActiveWordIndex } from './../../store/text.actions';
+import { SetActiveWordIndex, SetPhase } from './../../store/text.actions';
 
 @Component({
   templateUrl: './typer-input.component.html',
@@ -25,12 +25,13 @@ export class TyperInput {
   changeActiveWord(event) {
     const word = event.target.value;
 
-    if (
-      event.data === ' ' &&
-      this.activeWord === this.textToType[this.activeWordIndex]
-    ) {
-      this.activeWord = '';
-      this.store.dispatch(new SetActiveWordIndex(this.activeWordIndex + 1));
+    if (event.data === ' ') {
+      if (this.textToType.length === this.activeWordIndex + 1) {
+        this.store.dispatch(new SetPhase('finished'));
+      } else if (this.activeWord === this.textToType[this.activeWordIndex]) {
+        this.activeWord = '';
+        this.store.dispatch(new SetActiveWordIndex(this.activeWordIndex + 1));
+      }
     } else {
       this.activeWord = word;
     }

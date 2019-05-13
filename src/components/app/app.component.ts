@@ -15,11 +15,11 @@ import { mockText } from './../../mockText';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  typerInProgress: boolean;
+  phase: string;
 
   constructor(private store: Store<State>) {
     store.select('textReducer').subscribe((state: State) => {
-      this.typerInProgress = state.typerInProgress;
+      this.phase = state.phase;
     });
   }
 
