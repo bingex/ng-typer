@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgTyperService } from './ng-typer.service';
+import { NgTyperService } from './services/ng-typer.service';
 
 // State management
 import { Store, select } from '@ngrx/store';

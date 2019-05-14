@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 // State management
 import { Store, select } from '@ngrx/store';
-import { State } from './../interfaces/State';
-import { SetActiveWordIndex, SetPhase } from './../store/text.actions';
+import { State } from './../../../interfaces/State';
+import { SetActiveWordIndex, SetPhase } from './../../../store/text.actions';
 
 @Component({
   templateUrl: './typer-input.component.html',
