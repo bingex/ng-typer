@@ -10,5 +10,19 @@ import { State } from './../interfaces/State';
   selector: 'victory'
 })
 export class Victory {
-  constructor(private store: Store<State>) {}
+  timePassed: number = 0;
+  speed: number = 0;
+  count: number = 0;
+
+  constructor(private store: Store<State>) {
+    store.select('textReducer').subscribe((state: State) => {
+      this.timePassed = state.timePassed;
+      this.count = state.textToType.length;
+      if (state.timePassed) {
+        this.speed = Math.round(
+          ((state.activeWordIndex + 1) * 60) / state.timePassed
+        );
+      }
+    });
+  }
 }

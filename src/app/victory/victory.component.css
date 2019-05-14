@@ -1,0 +1,24 @@
+.victory-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: #c5e1a5;
+  border-radius: 3px;
+  margin-top: 40px;
+  font-family: sans-serif;
+}
+
+.victory-wrapper h4 {
+  font-size: 24px;
+  color: #263238;
+}
+
+.victory-wrapper div {
+  margin-top: 20px;
+}
+
+.victory-wrapper p {
+  margin-top: 10px;
+  color: #37474f;
+}
