@@ -1,10 +1,10 @@
-import { Action } from '@ngrx/store';
+import { Action } from "@ngrx/store";
 
 // State interface
-import { State } from './../interfaces/State';
+import { State, PhaseTypes } from "./../interfaces/State";
 
 // Actions
-import { Actions, ActionTypes } from './text.actions';
+import { Actions, ActionTypes } from "./text.actions";
 
 /**
  * Initial state for store
@@ -13,9 +13,10 @@ import { Actions, ActionTypes } from './text.actions';
  */
 export const intitialState: State = {
   activeWordIndex: 0,
-  phase: 'stopped',
+  phase: PhaseTypes.stopped,
   timePassed: 0,
-  textToType: []
+  textToType: [],
+  keyPressed: " "
 };
 
 /**
@@ -34,7 +35,7 @@ export function textReducer(state = intitialState, action: Actions): State {
     case ActionTypes.SetPhase:
       return {
         ...state,
-        phase: action.payload,
+        phase: PhaseTypes[action.payload],
         activeWordIndex: action.payload ? state.activeWordIndex : 0,
         timePassed: action.payload ? state.timePassed : 0
       };
@@ -44,6 +45,9 @@ export function textReducer(state = intitialState, action: Actions): State {
 
     case ActionTypes.SetTextToType:
       return { ...state, textToType: action.payload };
+
+    case ActionTypes.SetKeyPressed:
+      return { ...state, keyPressed: action.payload };
 
     default:
       return state;

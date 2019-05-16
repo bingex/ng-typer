@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 // State management
 import { Store, select } from '@ngrx/store';
-import { State } from './../../../interfaces/State';
+import { State, PhaseTypes } from './../../../interfaces/State';
 import { SetTimePassed } from './../../../store/text.actions';
 
 @Component({
@@ -19,7 +19,7 @@ export class Timer {
 
   constructor(private store: Store<State>) {
     store.select('textReducer').subscribe((state: State) => {
-      if (state.phase === 'started') {
+      if (state.phase === PhaseTypes.started) {
         if (!this._timer) this.startTimer();
       } else {
         this.stopTimer();

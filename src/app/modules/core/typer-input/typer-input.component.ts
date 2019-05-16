@@ -3,7 +3,11 @@ import { Component } from '@angular/core';
 // State management
 import { Store, select } from '@ngrx/store';
 import { State } from './../../../interfaces/State';
-import { SetActiveWordIndex, SetPhase } from './../../../store/text.actions';
+import {
+  SetActiveWordIndex,
+  SetPhase,
+  SetKeyPressed
+} from './../../../store/text.actions';
 
 @Component({
   templateUrl: './typer-input.component.html',
@@ -25,6 +29,10 @@ export class TyperInput {
   changeActiveWord(event) {
     const word = event.target.value;
 
+    // Change current key pressed
+    this.store.dispatch(new SetKeyPressed(event.data));
+
+    // Chenge active word index and active word higtlight
     if (event.data === ' ') {
       if (this.textToType.length === this.activeWordIndex + 1) {
         this.store.dispatch(new SetPhase('finished'));

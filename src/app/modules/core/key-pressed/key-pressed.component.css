@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  background-color: #88d8ff;
+  font-size: 42px;
+  border-radius: 3px;
+  font-family: sans-serif;
+  color: #ffffff;
+  margin-top: 50px;
+  text-align: center;
+  width: 120px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

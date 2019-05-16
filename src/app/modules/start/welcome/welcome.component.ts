@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 // State management
 import { Store, select } from '@ngrx/store';
-import { State } from './../../../interfaces/State';
+import { State, PhaseTypes } from './../../../interfaces/State';
 import { SetPhase } from './../../../store/text.actions';
 
 @Component({
@@ -14,6 +14,6 @@ export class Welcome {
   constructor(private store: Store<State>) {}
 
   startTyper() {
-    this.store.dispatch(new SetPhase('started'));
+    this.store.dispatch(new SetPhase(PhaseTypes.started));
   }
 }
